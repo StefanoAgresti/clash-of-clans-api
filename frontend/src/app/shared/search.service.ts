@@ -13,7 +13,7 @@ import { ClanRanking } from './models/clan.ranking';
 })
 export class SearchService {
   constructor(private httpClient: HttpClient) {}
-  private apiURL = 'http://localhost:3000';
+  private apiURL = 'https://clash-of-clans-api.onrender.com';
 
   getPlayerByTag(tag: string) {
     return this.httpClient.get<Player>(`${this.apiURL}/players/${tag}`);
