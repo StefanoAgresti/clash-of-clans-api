@@ -1,5 +1,7 @@
 Live Demo of the project.
 
+[Click here](https://clash-of-clans-api-1.onrender.com/)
+
 https://github.com/user-attachments/assets/ea5b2884-2fe3-4b36-8ffc-f25fe68b50b1
 
 # Project Overview
