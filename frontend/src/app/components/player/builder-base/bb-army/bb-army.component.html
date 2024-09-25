@@ -1,0 +1,22 @@
+<div
+  class="flex flex-col bg-glaucous mt-4 p-2 rounded-md text-white text-xs justify-between"
+>
+  <!--div truppe-->
+  <div class="p-2">
+    <!-- builder base truppe -->
+    <div class="mt-2">
+      <h2 class="text-sm font-bold">Truppe</h2>
+      <div class="flex flex-wrap gap-2 mt-2 p-2">
+        @for (troop of builderBaseArmy; track troop.name) {
+        <div class="flex gap-2">
+          <img
+            class="size-10"
+            [src]="getTroopImage(troop.name)"
+            [alt]="troop.name"
+          />
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

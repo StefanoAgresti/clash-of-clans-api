@@ -1,0 +1,18 @@
+@if (player.clan) {
+<div>
+  <div>
+    <h1>{{ player.clan.name }}</h1>
+  </div>
+
+  <div class="max-w-32">
+    <img
+      src="{{ player.clan.badgeUrls.medium }}"
+      alt="{{ player.clan.name }}"
+    />
+  </div>
+</div>
+} @else {
+<div>
+  <h1>No Clan</h1>
+</div>
+}

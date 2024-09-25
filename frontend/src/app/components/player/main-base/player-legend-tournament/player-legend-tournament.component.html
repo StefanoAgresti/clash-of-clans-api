@@ -1,0 +1,46 @@
+<div
+  class="bg-ultra_violet mt-2 rounded-md text-white text-sm p-2 flex flex-col"
+>
+  <h1 class="text-center">Torneo lega Leggende</h1>
+
+  <div class="flex justify-between text-xs gap-2 mt-2">
+    <!--miglior stagione-->
+    <div class="flex gap-2">
+      <h1>{{ player.legendStatistics.bestSeason.rank }}</h1>
+
+      <div class="flex flex-col gap-2">
+        <p>Migliore: stagione {{ player.legendStatistics.bestSeason.id }}</p>
+        <div class="flex items-center gap-1">
+          <img class="size-9" src="icons/trophy.png" alt="trofeo" />
+          <p>{{ player.legendStatistics.bestSeason.trophies }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!--stagione precedente-->
+    <div class="flex flex-col gap-2">
+      <p>
+        Precedente: stagione
+        {{ player.legendStatistics.previousSeason.id }}
+      </p>
+
+      <div class="flex gap-2 items-center">
+        <h1>{{ player.legendStatistics.previousSeason.rank }}</h1>
+
+        <div class="flex items-center gap-1">
+          <img class="size-9" src="icons/trophy.png" alt="trofeo" />
+          <h2>{{ player.legendStatistics.previousSeason.trophies }}</h2>
+        </div>
+      </div>
+    </div>
+
+    <!--trofei leggenda-->
+    <div class="flex flex-col gap-2">
+      <p>Trofei leggenda</p>
+      <div class="flex items-center gap-1">
+        <img class="size-9" src="icons/legend-trophy.png" alt="legend trophy" />
+        <h1>{{ player.legendStatistics.legendTrophies }}</h1>
+      </div>
+    </div>
+  </div>
+</div>

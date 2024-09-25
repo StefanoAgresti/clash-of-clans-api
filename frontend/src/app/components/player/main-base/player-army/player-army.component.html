@@ -1,0 +1,70 @@
+<div
+  class="flex flex-col bg-glaucous mt-2 p-2 rounded-md text-white text-xs justify-between"
+>
+  <!--div contiene truppe inc. eroi-->
+  <div class="p-2">
+    <!-- Truppe i -->
+    <div class="mt-2">
+      <h2 class="text-sm font-bold">Truppe</h2>
+      <div class="flex flex-wrap gap-2 mt-2 p-2">
+        @for (troop of troops; track troop.name) {
+        <div class="flex gap-2">
+          <img
+            class="size-10"
+            [src]="getTroopImage(troop.name)"
+            [alt]="troop.name"
+          />
+        </div>
+        }
+      </div>
+    </div>
+
+    <!-- Super truppe -->
+    <div class="mt-2">
+      <h2 class="text-sm font-bold">Super truppe</h2>
+      <div class="flex flex-wrap gap-2 mt-2 p-2">
+        @for (superTroop of superTroops; track superTroop.name) {
+        <div class="flex gap-2">
+          <img
+            class="size-10"
+            [src]="getTroopImage(superTroop.name)"
+            [alt]="superTroop.name"
+          />
+        </div>
+        }
+      </div>
+    </div>
+
+    <!-- Macchine da guerra -->
+    <div class="mt-2">
+      <h2 class="text-sm font-bold">Macchine da guerra</h2>
+      <div class="flex flex-wrap gap-2 mt-2 p-2">
+        @for (siegeMachine of siegeMachines; track siegeMachine.name) {
+        <div class="flex gap-2">
+          <img
+            class="size-10"
+            [src]="getTroopImage(siegeMachine.name)"
+            [alt]="siegeMachine.name"
+          />
+        </div>
+        }
+      </div>
+    </div>
+
+    <!-- Pets -->
+    <div class="mt-2">
+      <h2 class="text-sm font-bold">Pets</h2>
+      <div class="flex flex-wrap gap-2 mt-2 p-2">
+        @for (pet of pets; track pet.name) {
+        <div class="flex gap-2">
+          <img
+            class="size-10"
+            [src]="getTroopImage(pet.name)"
+            [alt]="pet.name"
+          />
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

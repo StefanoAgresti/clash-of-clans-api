@@ -1,0 +1,36 @@
+<div class="flex flex-col items-center p-7">
+  <div class="flex mb-[10px]">
+    <button
+      [ngClass]="
+        searchType === 'players' ? 'bg-blue-500 text-white' : 'bg-gray-100'
+      "
+      (click)="searchType = 'players'"
+      class="py-2 px-5 mx-1.5 border-none cursor-pointer mr-1 p-3 rounded-xl"
+    >
+      Search Players
+    </button>
+    <button
+      [ngClass]="
+        searchType === 'clans' ? 'bg-blue-500 text-white' : 'bg-gray-100'
+      "
+      (click)="searchType = 'clans'"
+      class="py-2 px-5 mx-1.5 border-none cursor-pointer mr-1 rounded-xl"
+    >
+      Search Clans
+    </button>
+  </div>
+  <div class="flex">
+    <input
+      type="text"
+      [(ngModel)]="tag"
+      [placeholder]="searchType === 'players' ? 'Find a player' : 'Find a clan'"
+      class="w-[200px] p-[10px] mr-[5px] border border-gray-300 rounded"
+    />
+    <button
+      (click)="onSearch()"
+      class="py-2 px-5 border-none cursor-pointer bg-green-600 text-white rounded-xl"
+    >
+      Search
+    </button>
+  </div>
+</div>

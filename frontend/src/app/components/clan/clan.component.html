@@ -1,0 +1,86 @@
+@if (clan) {
+<div class="bg-wenge rounded-lg shadow-lg p-2 font-supercell mx-auto max-w-7xl">
+  <div class="bg-alabaster rounded-md p-2">
+    <!-- Clan info -->
+    <div
+      class="flex bg-glaucous p-2 rounded-t-md text-white text-xs justify-between items-center"
+    >
+      <div class="flex items-center space-x-4">
+        <img
+          [src]="clan.badgeUrls.medium"
+          [alt]="clan.name"
+          class="w-16 h-16"
+        />
+        <div>
+          <h1 class="text-2xl font-bold">{{ clan.name }}</h1>
+          <p>{{ clan.tag }}</p>
+        </div>
+      </div>
+      <div class="text-right">
+        <p>Clan Level: {{ clan.clanLevel }}</p>
+        <p>Clan Trophies: {{ clan.clanPoints }}</p>
+      </div>
+    </div>
+
+    <!-- Clan stats -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+      <div class="bg-ultra_violet rounded-md text-white text-sm p-4">
+        <h2 class="text-lg font-semibold mb-2">War Stats</h2>
+        <p>War wins: {{ clan.warWins }}</p>
+        <p>Win Streak: {{ clan.warWinStreak }}</p>
+        <p>War Frequency: {{ clan.warFrequency }}</p>
+      </div>
+      <div class="bg-ultra_violet rounded-md text-white text-sm p-4">
+        <h2 class="text-lg font-semibold mb-2">Clan Capital</h2>
+        <p>Capital Hall Level: {{ clan.clanCapital.capitalHallLevel }}</p>
+        <p>Districts: {{ clan.clanCapital.districts.length }}</p>
+        <p>Capital Trophies: {{ clan.clanCapitalPoints }}</p>
+      </div>
+    </div>
+
+    <!-- Clan description -->
+    <div class="bg-violet mt-4 p-4 rounded-md text-white text-sm">
+      <h2 class="text-lg font-semibold mb-2">Description</h2>
+      <p>{{ clan.description }}</p>
+    </div>
+
+    <!-- Info -->
+    <div class="bg-violet mt-4 p-4 rounded-md text-white text-sm">
+      <h2 class="text-lg font-semibold mb-2">Info</h2>
+      <p>Required Trophies: {{ clan.requiredTrophies }}</p>
+      <p>Type: {{ clan.type }}</p>
+      <p>War Frequency: {{ clan.warFrequency }}</p>
+      <p>Location: {{ clan.location.name }}</p>
+    </div>
+
+    <!-- Members list -->
+    <div class="mt-4 max-h-96 overflow-y-auto">
+      <h2 class="text-lg font-semibold mb-2">
+        Clan Members ({{ clan.members }})
+      </h2>
+      <div class="bg-white rounded-md shadow overflow-hidden">
+        <table class="w-full text-sm">
+          <thead class="bg-gray-200 text-gray-700">
+            <tr>
+              <th class="py-2 px-4 text-left">Name</th>
+              <th class="py-2 px-4 text-left">Role</th>
+              <th class="py-2 px-4 text-right">Trophies</th>
+              <th class="py-2 px-4 text-right">Donations</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            @for (member of clan.memberList; track member.tag) {
+            <tr class="hover:bg-gray-50">
+              <td class="py-2 px-4">{{ member.name }}</td>
+              <td class="py-2 px-4">{{ member.role }}</td>
+              <td class="py-2 px-4 text-right">{{ member.trophies }}</td>
+              <td class="py-2 px-4 text-right">{{ member.donations }}</td>
+            </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+}

@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "supercell";
+    src: url(/fonts/Clash_Regular.otf) format("opentype");
+    /* src: url(/fonts/Supercell-magic-webfont.ttf) format("truetype"); */
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+@media (min-width: 1280px) {
+  .ranking-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .ranking-item {
+    min-height: 400px;
+    max-height: 600px;
+    overflow-y: auto;
+  }
+}

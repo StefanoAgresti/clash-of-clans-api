@@ -1,0 +1,28 @@
+<div class="flex flex-col gap-2 p-2">
+  <!--logo e lega-->
+  <div class="flex items-center">
+    <img
+      class="size-9"
+      src="icons/builder-base-trophy.png"
+      alt="{{ player.builderBaseLeague.name }}"
+    />
+
+    <div>
+      <h1>{{ player.builderBaseLeague.name }}</h1>
+      <h2>{{ player.builderBaseTrophies }}</h2>
+    </div>
+  </div>
+
+  <!--best trophies ever-->
+  <div>
+    <p>Migliore di sempre:</p>
+    <div class="flex items-center gap-2">
+      <img
+        class="size-6"
+        src="icons/builder-base-trophy.png"
+        alt="{{ player.builderBaseLeague.name }}"
+      />
+      <p>{{ player.bestBuilderBaseTrophies }}</p>
+    </div>
+  </div>
+</div>

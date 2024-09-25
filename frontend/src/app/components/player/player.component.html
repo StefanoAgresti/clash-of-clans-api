@@ -1,0 +1,80 @@
+@if (player) {
+<!--bg principale-->
+<div class="bg-wenge rounded-lg shadow-lg p-1 font-supercell mx-auto">
+  <div class="bg-alabaster rounded-md p-2">
+    <!-- navigazione-->
+    <div class="flex justify-around text-white text-xs">
+      <button
+        class="rounded-md p-4 shadow-inner"
+        [ngClass]="base == 'main' ? 'bg-ash_gray' : 'bg-battleship_gray'"
+        (click)="switchBase('main')"
+      >
+        Villaggio base
+      </button>
+      <button
+        class="rounded-md p-4"
+        [ngClass]="base == 'builder' ? 'bg-ash_gray' : 'bg-battleship_gray'"
+        (click)="switchBase('builder')"
+      >
+        Base del costruttore
+      </button>
+      <button
+        class="rounded-md p-4"
+        [ngClass]="base == 'capital' ? 'bg-ash_gray' : 'bg-battleship_gray'"
+        (click)="switchBase('capital')"
+      >
+        Capitale del clan
+      </button>
+    </div>
+
+    <!--profilo-->
+    <div
+      class="flex bg-glaucous mt-4 p-2 rounded-t-md text-white text-xs justify-between"
+    >
+      <!-- ** PLAYER INFO  **-->
+      <app-player-info [player]="player" />
+
+      <!--** CLAN INFO **-->
+      <app-player-clan-info [player]="player" />
+
+      <!--** STATISTICS **-->
+      @if (base === 'main') {
+      <!-- ** main base stats ** -->
+      <app-player-statistics [player]="player" />
+      } @else if(base === 'builder') {
+      <!-- ** builder base stats ** -->
+      <div class="flex items-center">
+        <app-statistics [player]="player" />
+      </div>
+      } @else {
+      <!--capital stats-->
+      <div class="flex items-center">
+        <app-capital-statistics [player]="player" />
+      </div>
+      }
+    </div>
+
+    <!--donazioni attacchi difese-->
+    @if (base === 'main') {
+
+    <app-player-donations-attacks [player]="player" />
+    }
+
+    <!--torneo lega leggende-->
+    @if (base === 'main') {
+
+    <app-player-legend-tournament [player]="player" />
+    } @else if(base === 'builder') {
+    <app-tournament [player]="player" />
+    }
+
+    <!--army-->
+    @if (base === 'main') {
+
+    <app-player-army [sortedTroops]="sortedTroops" />
+    } @else if(base === 'builder') {
+    <app-bb-army [sortedTroops]="sortedTroops" />
+    }
+  </div>
+</div>
+}

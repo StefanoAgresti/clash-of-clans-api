@@ -1,0 +1,42 @@
+<div class="flex flex-col">
+  <!--logo e lega-->
+  <div class="flex items-center">
+    <img
+      src="{{ player.league?.iconUrls?.small }}"
+      alt="{{ player.league?.name }}"
+    />
+
+    <div>
+      <h1>{{ player.league?.name }}</h1>
+      <div class="flex items-center gap-1">
+        <img class="size-9" src="icons/trophy.png" alt="trofeo" />
+        <h2>{{ player.trophies }}</h2>
+      </div>
+    </div>
+  </div>
+
+  <!--best trophies ever-->
+  <div>
+    <p>Migliore di sempre:</p>
+    <div class="flex items-center gap-2">
+      <div>
+        <img
+          class="size-9"
+          src="{{ player.league?.iconUrls?.tiny }}"
+          alt="{{ player.league?.name }}"
+        />
+      </div>
+
+      <div class="flex items-center gap-1">
+        <img class="size-6" src="icons/trophy.png" alt="trofeo" />
+        <p>{{ player.bestTrophies }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!--war stars-->
+  <div>
+    <p>Stelle di guerra vinte:</p>
+    <p>{{ player.warStars }}</p>
+  </div>
+</div>

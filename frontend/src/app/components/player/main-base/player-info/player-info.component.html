@@ -1,0 +1,30 @@
+<!--info-->
+<div class="flex justify-around gap-2">
+  <div class="relative flex items-center">
+    <img src="icons/xp-logo.png" alt="xp-logo" class="size-11" />
+    <p class="absolute inset-0 flex items-center justify-center text-lg">
+      {{ player.expLevel }}
+    </p>
+  </div>
+
+  <div class="flex flex-col gap-2">
+    <h1 class="text-base">{{ player.name }}</h1>
+    <p>{{ player.tag }}</p>
+    <p>{{ player.role }}</p>
+  </div>
+</div>
+
+<!--labels-->
+<div class="flex gap-3 mt-4">
+  <!--label-->
+  @for (label of player.labels; track label.id) {
+  <div class="relative group max-w-12">
+    <img src="{{ label.iconUrls.small }}" alt="{{ label.name }}" />
+
+    <span
+      class="absolute bottom-0 left-0 right-0 text-center text-white bg-black bg-opacity-75 p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      >{{ label.name }}</span
+    >
+  </div>
+  }
+</div>

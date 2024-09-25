@@ -1,0 +1,48 @@
+<div
+  class="bg-ultra_violet mt-2 rounded-md text-white text-sm p-2 flex flex-col"
+>
+  <h1 class="text-center">Torneo di scontri tra costruttori</h1>
+
+  <div class="flex justify-between text-xs gap-2 mt-2">
+    <!--miglior stagione-->
+    <div class="flex gap-2">
+      <h1>{{ player.legendStatistics.bestBuilderBaseSeason.rank }}</h1>
+
+      <div class="flex flex-col gap-2">
+        <p>
+          Migliore: stagione
+          {{ player.legendStatistics.bestBuilderBaseSeason.id }}
+        </p>
+        <div class="flex items-center">
+          <img
+            class="size-9"
+            src="icons/builder-base-trophy.png"
+            alt="trofeo"
+          />
+          <p>{{ player.legendStatistics.bestBuilderBaseSeason.trophies }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!--stagione precedente-->
+    <div class="flex flex-col gap-2">
+      <p>
+        Precedente: stagione
+        {{ player.legendStatistics.previousSeason.id }}
+      </p>
+
+      <div class="flex gap-2 items-center">
+        <h1>{{ player.legendStatistics.previousSeason.rank }}</h1>
+
+        <div class="flex items-center gap-1">
+          <img
+            class="size-9"
+            src="icons/builder-base-trophy.png"
+            alt="trofeo"
+          />
+          <h2>{{ player.legendStatistics.previousSeason.trophies }}</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
