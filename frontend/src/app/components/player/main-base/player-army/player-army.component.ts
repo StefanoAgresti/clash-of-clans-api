@@ -2,11 +2,10 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Troop } from '../../../../shared/models/player';
 
 @Component({
-  selector: 'app-player-army',
-  standalone: true,
-  imports: [],
-  templateUrl: './player-army.component.html',
-  styleUrl: './player-army.component.css',
+    selector: 'app-player-army',
+    imports: [],
+    templateUrl: './player-army.component.html',
+    styleUrl: './player-army.component.css'
 })
 export class PlayerArmyComponent implements OnInit {
   @Input() sortedTroops: Troop[] = [];

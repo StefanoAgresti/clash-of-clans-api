@@ -16,23 +16,22 @@ import { PlayerArmyComponent } from './main-base/player-army/player-army.compone
 import { BbArmyComponent } from './builder-base/bb-army/bb-army.component';
 
 @Component({
-  selector: 'app-player',
-  standalone: true,
-  imports: [
-    PlayerInfoComponent,
-    PlayerClanInfoComponent,
-    PlayerStatisticsComponent,
-    PlayerDonationsAttacksComponent,
-    PlayerLegendTournamentComponent,
-    StatisticsComponent,
-    TournamentComponent,
-    NgClass,
-    CapitalStatisticsComponent,
-    PlayerArmyComponent,
-    BbArmyComponent,
-  ],
-  templateUrl: './player.component.html',
-  styles: [],
+    selector: 'app-player',
+    imports: [
+        PlayerInfoComponent,
+        PlayerClanInfoComponent,
+        PlayerStatisticsComponent,
+        PlayerDonationsAttacksComponent,
+        PlayerLegendTournamentComponent,
+        StatisticsComponent,
+        TournamentComponent,
+        NgClass,
+        CapitalStatisticsComponent,
+        PlayerArmyComponent,
+        BbArmyComponent,
+    ],
+    templateUrl: './player.component.html',
+    styles: []
 })
 export class PlayerComponent implements OnInit {
   constructor(

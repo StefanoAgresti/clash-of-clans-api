@@ -3,11 +3,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [HeaderComponent, RouterOutlet],
-  templateUrl: './app.component.html',
-  styles: [],
+    selector: 'app-root',
+    imports: [HeaderComponent, RouterOutlet],
+    templateUrl: './app.component.html',
+    styles: []
 })
 export class AppComponent {
   title = 'clash-of-clans-api';

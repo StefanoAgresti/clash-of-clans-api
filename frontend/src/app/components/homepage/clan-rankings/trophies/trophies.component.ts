@@ -4,11 +4,10 @@ import { Router } from '@angular/router';
 import { ClanRanking } from '../../../../shared/models/clan.ranking';
 
 @Component({
-  selector: 'app-trophies',
-  standalone: true,
-  imports: [],
-  templateUrl: './trophies.component.html',
-  styles: [],
+    selector: 'app-trophies',
+    imports: [],
+    templateUrl: './trophies.component.html',
+    styles: []
 })
 export class TrophiesComponent implements OnInit {
   constructor(private searchService: SearchService, private router: Router) {}

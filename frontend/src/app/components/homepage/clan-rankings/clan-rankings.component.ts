@@ -4,14 +4,13 @@ import { BuilderBaseTrophiesComponent } from './builder-base-trophies/builder-ba
 import { CapitalTrophiesComponent } from './capital-trophies/capital-trophies.component';
 
 @Component({
-  selector: 'app-clan-rankings',
-  standalone: true,
-  imports: [
-    TrophiesComponent,
-    BuilderBaseTrophiesComponent,
-    CapitalTrophiesComponent,
-  ],
-  templateUrl: './clan-rankings.component.html',
-  styles: [],
+    selector: 'app-clan-rankings',
+    imports: [
+        TrophiesComponent,
+        BuilderBaseTrophiesComponent,
+        CapitalTrophiesComponent,
+    ],
+    templateUrl: './clan-rankings.component.html',
+    styles: []
 })
 export class ClanRankingsComponent {}

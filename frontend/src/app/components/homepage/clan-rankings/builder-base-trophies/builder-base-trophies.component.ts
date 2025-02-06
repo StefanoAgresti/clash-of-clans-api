@@ -4,11 +4,10 @@ import { Router } from '@angular/router';
 import { ClanBbRanking } from '../../../../shared/models/clan-bb-ranking';
 
 @Component({
-  selector: 'app-builder-base-trophies',
-  standalone: true,
-  imports: [],
-  templateUrl: './builder-base-trophies.component.html',
-  styles: [],
+    selector: 'app-builder-base-trophies',
+    imports: [],
+    templateUrl: './builder-base-trophies.component.html',
+    styles: []
 })
 export class BuilderBaseTrophiesComponent implements OnInit {
   constructor(private searchService: SearchService, private router: Router) {}

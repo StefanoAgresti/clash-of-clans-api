@@ -4,11 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-search-bar',
-  standalone: true,
-  imports: [FormsModule, NgClass],
-  templateUrl: './search-bar.component.html',
-  styles: [],
+    selector: 'app-search-bar',
+    imports: [FormsModule, NgClass],
+    templateUrl: './search-bar.component.html',
+    styles: []
 })
 export class SearchBarComponent {
   tag: string = '';
