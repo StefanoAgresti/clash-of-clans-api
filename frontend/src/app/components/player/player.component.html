@@ -61,7 +61,7 @@
     }
 
     <!--torneo lega leggende-->
-    @if (base === 'main') {
+    @if (base === 'main' && player.bestTrophies >= 5000) {
 
     <app-player-legend-tournament [player]="player" />
     } @else if(base === 'builder') {

@@ -4,10 +4,9 @@ import { Router } from '@angular/router';
 import { CapitalRanking } from '../../../../shared/models/capital-ranking';
 
 @Component({
-    selector: 'app-capital-trophies',
-    imports: [],
-    templateUrl: './capital-trophies.component.html',
-    styles: []
+  selector: 'app-capital-trophies',
+  imports: [],
+  templateUrl: './capital-trophies.component.html',
 })
 export class CapitalTrophiesComponent implements OnInit {
   constructor(private searchService: SearchService, private router: Router) {}

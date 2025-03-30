@@ -4,9 +4,8 @@ import { PlayerRankingsComponent } from './player-rankings/player-rankings.compo
 import { ClanRankingsComponent } from './clan-rankings/clan-rankings.component';
 
 @Component({
-    selector: 'app-homepage',
-    imports: [SearchBarComponent, PlayerRankingsComponent, ClanRankingsComponent],
-    templateUrl: './homepage.component.html',
-    styles: []
+  selector: 'app-homepage',
+  imports: [SearchBarComponent, PlayerRankingsComponent, ClanRankingsComponent],
+  templateUrl: './homepage.component.html',
 })
 export class HomepageComponent {}

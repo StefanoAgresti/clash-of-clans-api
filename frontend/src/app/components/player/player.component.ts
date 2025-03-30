@@ -15,23 +15,30 @@ import { customOrder } from '../../shared/customOrder';
 import { PlayerArmyComponent } from './main-base/player-army/player-army.component';
 import { BbArmyComponent } from './builder-base/bb-army/bb-army.component';
 
+export interface TroopCategories {
+  troops: Troop[];
+  superTroops: Troop[];
+  builderBaseTroops: Troop[];
+  siegeMachines: Troop[];
+  pets: Troop[];
+}
+
 @Component({
-    selector: 'app-player',
-    imports: [
-        PlayerInfoComponent,
-        PlayerClanInfoComponent,
-        PlayerStatisticsComponent,
-        PlayerDonationsAttacksComponent,
-        PlayerLegendTournamentComponent,
-        StatisticsComponent,
-        TournamentComponent,
-        NgClass,
-        CapitalStatisticsComponent,
-        PlayerArmyComponent,
-        BbArmyComponent,
-    ],
-    templateUrl: './player.component.html',
-    styles: []
+  selector: 'app-player',
+  imports: [
+    PlayerInfoComponent,
+    PlayerClanInfoComponent,
+    PlayerStatisticsComponent,
+    PlayerDonationsAttacksComponent,
+    PlayerLegendTournamentComponent,
+    StatisticsComponent,
+    TournamentComponent,
+    NgClass,
+    CapitalStatisticsComponent,
+    PlayerArmyComponent,
+    BbArmyComponent,
+  ],
+  templateUrl: './player.component.html',
 })
 export class PlayerComponent implements OnInit {
   constructor(
@@ -43,7 +50,13 @@ export class PlayerComponent implements OnInit {
   playerTag: string = '';
   player!: Player;
   base: 'main' | 'builder' | 'capital' = 'main';
-  sortedTroops: Troop[] = [];
+  sortedTroops: TroopCategories = {
+    troops: [],
+    superTroops: [],
+    builderBaseTroops: [],
+    siegeMachines: [],
+    pets: [],
+  };
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
@@ -57,7 +70,6 @@ export class PlayerComponent implements OnInit {
         console.log(data);
         this.player = data;
         this.sortTroops();
-        console.log('sortedTroops: ', this.sortedTroops);
       },
     });
   }
@@ -66,10 +78,29 @@ export class PlayerComponent implements OnInit {
     this.base = selectedBase;
   }
 
-  // Funzione che ordina le truppe in base a customOrder
   sortTroops() {
-    this.sortedTroops = this.player.troops.sort((a, b) => {
-      return customOrder.indexOf(a.name) - customOrder.indexOf(b.name);
+    const troopCategories: TroopCategories = {
+      troops: [],
+      superTroops: [],
+      builderBaseTroops: [],
+      siegeMachines: [],
+      pets: [],
+    };
+
+    this.player.troops.forEach((troop) => {
+      if (customOrder.troops.includes(troop.name)) {
+        troopCategories.troops.push(troop);
+      } else if (customOrder.superTroops.includes(troop.name)) {
+        troopCategories.superTroops.push(troop);
+      } else if (customOrder.builderBaseTroops.includes(troop.name)) {
+        troopCategories.builderBaseTroops.push(troop);
+      } else if (customOrder.siegeMachines.includes(troop.name)) {
+        troopCategories.siegeMachines.push(troop);
+      } else if (customOrder.pets.includes(troop.name)) {
+        troopCategories.pets.push(troop);
+      }
     });
+
+    this.sortedTroops = troopCategories;
   }
 }

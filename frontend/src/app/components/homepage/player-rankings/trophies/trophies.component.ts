@@ -4,10 +4,9 @@ import { PlayerRanking } from '../../../../shared/models/player-ranking';
 import { Router } from '@angular/router';
 
 @Component({
-    selector: 'app-trophies',
-    imports: [],
-    templateUrl: './trophies.component.html',
-    styles: []
+  selector: 'app-trophies',
+  imports: [],
+  templateUrl: './trophies.component.html',
 })
 export class TrophiesComponent implements OnInit {
   constructor(private searchService: SearchService, private router: Router) {}

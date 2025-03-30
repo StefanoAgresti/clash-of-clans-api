@@ -1,16 +1,14 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Troop } from '../../../../shared/models/player';
+import { TroopCategories } from '../../player.component';
 
 @Component({
-    selector: 'app-player-army',
-    imports: [],
-    templateUrl: './player-army.component.html',
-    styleUrl: './player-army.component.css'
+  selector: 'app-player-army',
+  imports: [],
+  templateUrl: './player-army.component.html',
 })
 export class PlayerArmyComponent implements OnInit {
-  @Input() sortedTroops: Troop[] = [];
-
-  homeArmy: Troop[] = [];
+  @Input() sortedTroops!: TroopCategories;
 
   troops: Troop[] = [];
   superTroops: Troop[] = [];
@@ -18,22 +16,18 @@ export class PlayerArmyComponent implements OnInit {
   pets: Troop[] = [];
 
   ngOnInit(): void {
-    this.homeArmy = this.sortedTroops.filter(
+    this.troops = this.sortedTroops.troops.filter(
       (troop) => troop.village === 'home'
     );
-    console.log('home army: ', this.homeArmy);
-
-    this.troops = this.homeArmy.slice(0, 28);
-    console.log('troops', this.troops);
-
-    this.superTroops = this.homeArmy.slice(28, 44);
-    console.log('super troops', this.superTroops);
-
-    this.siegeMachines = this.homeArmy.slice(44, 52);
-    console.log('siege machines', this.siegeMachines);
-
-    this.pets = this.homeArmy.slice(52);
-    console.log('pets', this.pets);
+    this.superTroops = this.sortedTroops.superTroops.filter(
+      (troop) => troop.village === 'home'
+    );
+    this.siegeMachines = this.sortedTroops.siegeMachines.filter(
+      (troop) => troop.village === 'home'
+    );
+    this.pets = this.sortedTroops.pets.filter(
+      (troop) => troop.village === 'home'
+    );
   }
 
   getTroopImage(troopName: string) {

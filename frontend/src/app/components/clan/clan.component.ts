@@ -4,10 +4,9 @@ import { SearchService } from '../../shared/search.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-    selector: 'app-clan',
-    imports: [],
-    templateUrl: './clan.component.html',
-    styles: []
+  selector: 'app-clan',
+  imports: [],
+  templateUrl: './clan.component.html',
 })
 export class ClanComponent {
   clanTag: string = '';

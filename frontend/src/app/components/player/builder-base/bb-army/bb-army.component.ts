@@ -1,22 +1,21 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Troop } from '../../../../shared/models/player';
+import { TroopCategories } from '../../player.component';
 
 @Component({
-    selector: 'app-bb-army',
-    imports: [],
-    templateUrl: './bb-army.component.html',
-    styleUrl: './bb-army.component.css'
+  selector: 'app-bb-army',
+  imports: [],
+  templateUrl: './bb-army.component.html',
 })
 export class BbArmyComponent implements OnInit {
-  @Input() sortedTroops: Troop[] = [];
+  @Input() sortedTroops!: TroopCategories;
 
   builderBaseArmy: Troop[] = [];
 
   ngOnInit(): void {
-    this.builderBaseArmy = this.sortedTroops.filter(
+    this.builderBaseArmy = this.sortedTroops.builderBaseTroops.filter(
       (troop) => troop.village === 'builderBase'
     );
-    console.log('builder base army: ', this.builderBaseArmy);
   }
 
   getTroopImage(troopName: string) {
