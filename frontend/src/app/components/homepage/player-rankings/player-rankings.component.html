@@ -1,11 +1,12 @@
-<div>
-  <h2 class="text-2xl font-bold mb-6 text-gray-800">Player Rankings</h2>
-  <div class="ranking-grid">
-    <app-trophies
-      class="ranking-item bg-gray-100 rounded-lg p-4 hover:shadow-md transition-shadow duration-300"
-    />
-    <app-builder-base-trophies
-      class="ranking-item bg-gray-100 rounded-lg p-4 hover:shadow-md transition-shadow duration-300"
-    />
+<div class="flex flex-col space-y-4">
+  <!-- Section Title -->
+  <h2 class="text-2xl font-bold text-slate-800 px-1">Player Rankings</h2>
+
+  <!-- Grid for Player Ranking Cards -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+    <!-- Player Trophies List -->
+    <app-trophies />
+    <!-- Builder Base Trophies List -->
+    <app-builder-base-trophies />
   </div>
 </div>

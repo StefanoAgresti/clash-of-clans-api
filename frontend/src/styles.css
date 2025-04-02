@@ -14,16 +14,8 @@
   }
 }
 
-@media (min-width: 1280px) {
-  .ranking-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .ranking-item {
-    min-height: 400px;
-    max-height: 600px;
-    overflow-y: auto;
-  }
+body {
+  background-color: #f8fafc;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

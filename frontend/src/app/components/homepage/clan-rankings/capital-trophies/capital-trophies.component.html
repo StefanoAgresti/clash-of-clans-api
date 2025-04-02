@@ -1,21 +1,28 @@
-<div class="h-full">
-  <h3 class="text-lg font-semibold mb-4 text-gray-700">
-    Clan Capital Trophies
+<!-- trophies.component.html (used within clan-rankings) -->
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+  <h3
+    class="text-base font-semibold text-slate-700 px-4 py-3 border-b border-slate-200"
+  >
+    Clan Trophies
   </h3>
-  <ul class="space-y-2 overflow-y-auto max-h-[calc(100%-2rem)]">
+  <ul class="divide-y divide-slate-100">
     @for (clan of capitalRankings; track clan.tag) {
-    <li
-      class="bg-white p-3 rounded shadow-sm hover:bg-gray-50 transition-colors duration-200"
-    >
+    <li class="hover:bg-slate-50 transition-colors duration-150">
       <button
         (click)="redirectToClanPage(clan.tag)"
-        class="w-full text-left flex justify-between items-center"
+        class="w-full text-left flex justify-between items-center px-4 py-2.5"
       >
-        <span class="font-medium truncate mr-2">{{ clan.name }}</span>
-        <span class="text-gray-600 whitespace-nowrap">{{
+        <span class="text-sm font-medium text-slate-800 truncate mr-2">{{
+          clan.name
+        }}</span>
+        <span class="text-sm text-slate-500 whitespace-nowrap">{{
           clan.clanCapitalPoints
         }}</span>
       </button>
+    </li>
+    } @empty {
+    <li class="px-4 py-3 text-sm text-slate-500 italic">
+      No clan rankings available.
     </li>
     }
   </ul>

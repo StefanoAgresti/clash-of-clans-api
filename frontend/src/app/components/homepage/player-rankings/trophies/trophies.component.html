@@ -1,19 +1,30 @@
-<div class="h-full">
-  <h3 class="text-lg font-semibold mb-4 text-gray-700">Trofei Giocatori</h3>
-  <ul class="space-y-2 overflow-y-auto max-h-[calc(100%-2rem)]">
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+  <h3
+    class="text-base font-semibold text-slate-700 px-4 py-3 border-b border-slate-200"
+  >
+    Trofei Giocatori
+  </h3>
+  <!-- Add a max-height and overflow-y-auto here if lists can be very long -->
+  <ul class="divide-y divide-slate-100">
+    <!-- Use @for loop -->
     @for (player of playerRankings; track player.tag) {
-    <li
-      class="bg-white p-3 rounded shadow-sm hover:bg-gray-50 transition-colors duration-200"
-    >
+    <li class="hover:bg-slate-50 transition-colors duration-150">
       <button
         (click)="redirectToPlayerPage(player.tag)"
-        class="w-full text-left flex justify-between items-center"
+        class="w-full text-left flex justify-between items-center px-4 py-2.5"
       >
-        <span class="font-medium truncate mr-2">{{ player.name }}</span>
-        <span class="text-gray-600 whitespace-nowrap">{{
+        <span class="text-sm font-medium text-slate-800 truncate mr-2">{{
+          player.name
+        }}</span>
+        <span class="text-sm text-slate-500 whitespace-nowrap">{{
           player.trophies
         }}</span>
       </button>
+    </li>
+    } @empty {
+    <!-- Optional: Show a message if the list is empty -->
+    <li class="px-4 py-3 text-sm text-slate-500 italic">
+      No player rankings available.
     </li>
     }
   </ul>

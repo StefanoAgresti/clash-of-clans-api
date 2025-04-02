@@ -1,4 +1,4 @@
-<div class="h-full">
+<!-- <div class="h-full">
   <h3 class="text-lg font-semibold mb-4 text-gray-700">
     Builder Base Trophies
   </h3>
@@ -16,6 +16,36 @@
           clan.clanBuilderBasePoints
         }}</span>
       </button>
+    </li>
+    }
+  </ul>
+</div> -->
+
+<!-- trophies.component.html (used within clan-rankings) -->
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+  <h3
+    class="text-base font-semibold text-slate-700 px-4 py-3 border-b border-slate-200"
+  >
+    Clan Trophies
+  </h3>
+  <ul class="divide-y divide-slate-100">
+    @for (clan of clanBbRankings; track clan.tag) {
+    <li class="hover:bg-slate-50 transition-colors duration-150">
+      <button
+        (click)="redirectToClanPage(clan.tag)"
+        class="w-full text-left flex justify-between items-center px-4 py-2.5"
+      >
+        <span class="text-sm font-medium text-slate-800 truncate mr-2">{{
+          clan.name
+        }}</span>
+        <span class="text-sm text-slate-500 whitespace-nowrap">{{
+          clan.clanBuilderBasePoints
+        }}</span>
+      </button>
+    </li>
+    } @empty {
+    <li class="px-4 py-3 text-sm text-slate-500 italic">
+      No clan rankings available.
     </li>
     }
   </ul>
